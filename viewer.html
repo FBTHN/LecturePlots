@@ -298,7 +298,7 @@
   <!-- Environment badge 
   <div id="envBadge"></div>
   -->
-  
+
   <!-- Welcome overlay -->
   <div id="overlay">
     <div class="emoji">🌐</div>
@@ -351,8 +351,6 @@
     let loadTimeoutId = null;
     let iframeLoadFailed = false;
 
-    // Hide controls initially
-    toggleControls()
 
     // ─── Detect environment ───────────────────────────────
     function detectEnvironment() {
@@ -620,6 +618,9 @@
       if (!currentUrl) {
         showWelcome();
       }
+
+      // Hide controls initially
+      toggleControls()
 
       // Try to load saved URL for this slide
       try {
