@@ -93,24 +93,15 @@
     .btn-hide:hover { background: #ddd; }
 
     /* Toggle button (when controls are hidden) */
-    #toggleBtn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      z-index: 101;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      cursor: pointer;
-      font-size: 16px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
+    
+#toggleBtn { 
+  position: absolute; top: 8px; right: 8px; z-index: 101;
+  width: 36px; height: 36px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.9); cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex; align-items: center; justify-content: center;  /* force visible */
+}
+
     #toggleBtn:hover { background: rgba(255,255,255,1); }
     #toggleBtn.visible { display: flex; }
 
@@ -294,7 +285,7 @@
 <div id="appWrapper">
 
   <!-- Control bar -->
-  <div id="config">
+  <div id="config" class="hidden">
     <span class="icon">🌐</span>
     <input id="urlInput" type="text" placeholder="Enter website URL (e.g. https://example.com)" />
     <button class="btn btn-primary" onclick="loadUrl()">Load</button>
