@@ -16,5 +16,9 @@ dependencies = [
     "pathlib"
 ]
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
 [tool.setuptools]
 packages = ["pylectureplots"]
