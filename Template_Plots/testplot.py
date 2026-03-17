@@ -11,6 +11,7 @@ fig.add_trace(go.Scatter(x=x,y=x));
 fig.update_layout(margin=dict(l=25, r=10, t=10,b=40),autosize=True)
 
 
+
 # Save html
 html = fig.to_html(
     full_html=True,
