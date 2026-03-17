@@ -1,6 +1,7 @@
 from pathlib import Path
 
 def to_html(fig):
+    print("exporting figure...")
     # Save html
     html = fig.to_html(
         full_html=True,
