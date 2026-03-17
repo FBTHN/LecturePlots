@@ -2,6 +2,7 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.io as pio
 pio.templates.default = "none"
+from pathlib import Path
 
 fig = go.Figure()
 x = np.arange(10)
@@ -14,7 +15,8 @@ fig.update_layout(margin=dict(l=25, r=10, t=10,b=40),autosize=True)
 html = fig.to_html(
     full_html=True,
     include_plotlyjs='cdn',     # smaller file; loads Plotly from CDN
-    config = {"responsive": True}
+    config = {"responsive": True},
+    include_mathjax='cdn'
 )
 
 # Wrap it in a minimal full-screen HTML template
@@ -60,7 +62,7 @@ fullscreen_html = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-
-with open("./Lecture1/testplot.html", "w", encoding="utf-8") as f:
+output_path = Path(__file__).resolve().with_suffix('.html')
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(fullscreen_html)
 
