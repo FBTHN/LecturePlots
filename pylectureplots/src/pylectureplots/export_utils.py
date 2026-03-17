@@ -1,6 +1,4 @@
-from pathlib import Path
-
-def to_html(fig):
+def to_html(fig,output_path):
     print("exporting figure...")
     # Save html
     html = fig.to_html(
@@ -53,6 +51,5 @@ def to_html(fig):
     </body>
     </html>"""
 
-    output_path = Path(__file__).resolve().with_suffix('.html')
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(fullscreen_html)
